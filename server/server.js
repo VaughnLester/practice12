@@ -1,6 +1,7 @@
 import express from "express";
 import { projectRouter } from "./API/projectsAPI.js";
 import path from "path";
+import cors from "cors"
 
 
 const app = express();
@@ -19,10 +20,15 @@ app.use((err, req, res, next)=>{
     });
 });
 
+//establishing cors for communication between hosted frontend and backend 
+app.use(cors({
+    origin: "https://practice12-c6pj.onrender.com"
+}))
 
-app.listen(1000, ()=>{
-    console.log("Server listening on port 1000");
-})
+const PORT = process.env.PORT || 1000;
+
+app.listen(PORT, ()=>{
+    console.log(`Server listening on port ${PORT}`)})
 
 app.get("/{*any}", (req,res)=>{
     res.sendFile(reactPath);
