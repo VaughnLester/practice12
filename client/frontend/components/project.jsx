@@ -23,8 +23,7 @@ function Project(){
         }
         getProject();
 
-        console.log(project);
-        console.log(project.length);
+        alert(JSON.stringify(project));
     },[])
 
     return(
