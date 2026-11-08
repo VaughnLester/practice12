@@ -13,7 +13,7 @@ function Projects(){
     //getProjects
     async function getProjects(){
         try{
-                const data = await fetch("/api/projects");
+                const data = await fetch("https://practice12server.onrender.com/api/projects");
                 const results = await data.json();
                 setProjects(results[0])
                 console.log(projects)
@@ -26,7 +26,7 @@ function Projects(){
         try{
             setLoading(true);
             setError("");
-            await fetch("/api/delete/",{
+            await fetch("https://practice12server.onrender.com/api/delete/",{
                 method: "DELETE",
                 body: JSON.stringify({
                     id: id
@@ -52,7 +52,7 @@ function Projects(){
             setError("Title Required");
             return;
           }
-          await fetch(`/api/update/${id}`,{
+          await fetch(`https://practice12server.onrender.com/api/update/${id}`,{
             method: "PATCH",
             headers: {"Content-type":"application/json"},
             body: JSON.stringify({
@@ -75,7 +75,7 @@ function Projects(){
     useEffect(()=>{
         async function getProjects(){
             try{
-                 const data = await fetch("/api/projects");
+                 const data = await fetch("https://practice12server.onrender.com/api/projects");
                  const results = await data.json();
                  const filteredResults = results[0].filter((project) =>project.title.toLowerCase().includes(input.toLowerCase()));
                  setProjects(filteredResults);
@@ -90,7 +90,7 @@ function Projects(){
         try{
             e.preventDefault();
             const form = new FormData(e.target);
-            const res = await fetch("/api/createProject",{
+            const res = await fetch("https://practice12server.onrender.com/api/createProject",{
                 method: "POST",
                 headers: {"Content-Type":"application/json"},
                 body: JSON.stringify({

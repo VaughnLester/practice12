@@ -15,7 +15,7 @@ function Project(){
     useEffect(()=>{
         async function getProject(){
             try{
-                const data = await fetch(`/api/project/${id}`)
+                const data = await fetch(`https://practice12server.onrender.com/api/project/${id}`)
                 const result = await data.json();
                 setProject(result[0]);
             }
