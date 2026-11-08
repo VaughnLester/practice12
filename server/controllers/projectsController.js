@@ -11,7 +11,8 @@ export async function getProjects(req, res){
 
 export async function getProject(req, res){
     try{
-        const data = await db.query("SELECT * FROM projects WHERE ID = ?", req.params.id)
+        //[data] returns just the project fields not the metadata too
+        const [data] = await db.query("SELECT * FROM projects WHERE ID = ?", req.params.id)
         res.json(data);
     }
     catch(err){console.log(err)}
