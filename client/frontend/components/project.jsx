@@ -33,8 +33,9 @@ function Project(){
             <h1>Project Page</h1>
             <nav><Link to={'/home'}>Return Home</Link></nav>
         </header>
-                {project.map((project)=>(
+                {project.map((project, index)=>(
                     <div className="flex flex-col justify-center items-center mx-auto my-9 gap-5 bg-orange-500 p-8 max-w-5xl min-h-[90vh] sm:max-w-xl border-black text-xl font-bold text-center border border-green-500 rounded-lg hover:bg-green-100">
+                        <h1>Map Iternation: {index}</h1>
                         <h1>{id}</h1>
                         <h1>{project.title}</h1>
                         <h1>{author}</h1>
