@@ -22,6 +22,9 @@ function Project(){
             catch(err){console.log(err)}
         }
         getProject();
+
+        console.log(project);
+        console.log(project.length);
     },[])
 
     return(

@@ -6,7 +6,7 @@ const db = sql.createPool({
     password: "y6ly8SwB53",
     database: "sql5820138",
     port: 3306,
-    connectionLimit: false,
+    connectionLimit: 10,
     queueLimit: 0
 })
 
