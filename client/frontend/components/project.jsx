@@ -24,7 +24,7 @@ function Project(){
         getProject();
     },[])
 
-            alert(JSON.stringify(project));
+    console.log(JSON.stringify(project));
 
     return(
         <><header className="flex flex-row justify-evenly items-center ">
