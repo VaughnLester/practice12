@@ -22,9 +22,9 @@ function Project(){
             catch(err){console.log(err)}
         }
         getProject();
-
-        alert(JSON.stringify(project));
     },[])
+
+            alert(JSON.stringify(project));
 
     return(
         <><header className="flex flex-row justify-evenly items-center ">
